@@ -7,19 +7,15 @@
     <h1><a href=" ">Chinmay's blog</a></h1>
     </div>
 
-  <div>
-    <p>published: 10.01.2017, 12:10</p>
-    <h2><a href=" ">My first post</a></h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis dictum lorem, in pharetra ligula rhoncus sit amet. Proin consequat congue purus, eu mattis leo convallis vitae. Pellentesque feugiat dignissim ligula, id feugiat sapien varius ac. Praesent velit eros, egestas at elit id, mattis blandit nisi. Duis sagittis libero vel odio tristique luctus. Mauris ac ipsum venenatis, rhoncus sem vitae, condimentum leo. Proin viverra, dui nec finibus dignissim, tortor metus varius orci, id cursus nisl nulla commodo magna. Aliquam vel finibus mauris. Nulla facilisi. Aenean ut nunc quis metus tristique pretium. Pellentesque porta libero enim, nec varius lorem porttitor at. In et neque eros.</p>
-    </div>
-
+    {% for post in posts %}
     <div>
-      <p>published: 20.02.2016, 11:23</p>
-      <h2><a href=" ">My second post</a></h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis dictum lorem, in pharetra ligula rhoncus sit amet. Proin consequat congue purus, eu mattis leo convallis vitae. Pellentesque feugiat dignissim ligula, id feugiat sapien varius ac. Praesent velit eros, egestas at elit id, mattis blandit nisi. Duis sagittis libero vel odio tristique luctus. Mauris ac ipsum venenatis, rhoncus sem vitae, condimentum leo. Proin viverra, dui nec finibus dignissim, tortor metus varius orci, id cursus nisl nulla commodo magna. Aliquam vel finibus mauris. Nulla facilisi. Aenean ut nunc quis metus tristique pretium. Pellentesque porta libero enim, nec varius lorem porttitor at. In et neque eros.
-      </p>
+      <p>published: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaksbr }}</p>
     </div>
+    {% endfor %}
+
+
 
   </body>
   </html>
